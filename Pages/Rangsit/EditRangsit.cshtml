@@ -1,0 +1,45 @@
+﻿@page
+@model InventorySystem.Pages.Rangsit.EditRangsitModel
+@{
+}
+
+<br />
+<h2>Edit Item</h2>
+
+@if (Model.errorMessage.Length > 0)
+{
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+		<strong>@Model.errorMessage</strong>
+		<button type="button" class="btn-close" date-bs-dismiss="lert" aria-lable="Close"></button>
+	</div>
+}
+
+<form method="POST">
+	<input type="hidden" name="itenid" value="@Model.stockInfo.itemid" />
+		<label class="col-sm-3 col-form-label">Item</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="item" value="@Model.stockInfo.item">
+		</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">StoreID</label>
+		<div class="col-sm-6">
+			< type="text" class="form-control" name="storeid" value="@Model.stockInfo.storeid">
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Supplier</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="supplier" value="@Model.stockInfo.supplier">
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Amount</label>
+		<div class="col-sm-6">
+			< type="text" class="form-control" name="amount" value="@Model.stockInfo.amount">
+		</div>
+	</div>
+
+	<div class="col-sm-3 d-grid">
+		<a class="btn btn-outline-primary" herf="/Rangsit/IndexRangsit" role="button">Cancel</a>
+	</div>
+</form>
